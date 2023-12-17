@@ -8,7 +8,9 @@ function ResultItemList({ data }) {
   procesDate(data);
   const finalData = commonProjectsArray(data);
   {
-    return finalData.map((item) => <ResultItem data={item} />);
+    return finalData.map((item, index) => (
+      <ResultItem key={index} data={item} />
+    ));
   }
 }
 

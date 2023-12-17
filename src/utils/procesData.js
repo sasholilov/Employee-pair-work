@@ -19,13 +19,18 @@ const commonProjectsArray = function (arrayData) {
     if (projectIndex === -1) {
       newObj = {
         projectId: item.projectId,
-        employeesIds: [item.employeeId],
-        dateFrom: item.dateFrom,
-        dateTo: item.dateTo,
+        employeeOne: item.employeeId,
+        employeeOneDateFrom: item.dateFrom,
+        employeeOneDateTo: item.dateTo,
+        employeeTwo: "",
+        employeeTwoDateFrom: "",
+        employeeTwoDateTo: "",
       };
       tempArray.push(newObj);
     } else {
-      tempArray[projectIndex].employeesIds.push(item.employeeId);
+      tempArray[projectIndex].employeeTwo = item.employeeId;
+      tempArray[projectIndex].employeeTwoDateFrom = item.dateFrom;
+      tempArray[projectIndex].employeeTwoDateTo = item.dateTo;
     }
   });
   console.log("checkpoint", tempArray);
