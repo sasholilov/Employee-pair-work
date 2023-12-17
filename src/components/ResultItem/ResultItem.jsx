@@ -2,10 +2,10 @@ import "./ResultItem.css";
 
 function ResultItem({ data }) {
   return (
-    <p>{`${d.employeeId}
-  ${d.projectId}
-  ${d.dateFrom}
-  ${d.dateTo}`}</p>
+    <p>{`${data.employeeId}
+  ${data.projectId}
+  ${data.dateFrom}
+  ${data.dateTo}`}</p>
   );
 }
 
