@@ -1,18 +1,13 @@
 import "./App.css";
 import Button from "./components/Buttons/Button";
 import { useState } from "react";
+import { readFile } from "./utils/readFile";
 
 function App() {
   const [data, setData] = useState([]);
 
   function handleFileChange(e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsText(file);
-    reader.onload = function () {
-      const data = reader.result;
-      console.log(data);
-    };
+    readFile(e);
   }
   return (
     <div className="App">
