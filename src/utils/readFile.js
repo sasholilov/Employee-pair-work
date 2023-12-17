@@ -8,7 +8,6 @@ const readFile = function (e) {
     reader.onload = function () {
       const data = reader.result;
       const newData = splitStringToArray(data);
-      console.log("newData", newData);
       resolve(newData);
     };
 
