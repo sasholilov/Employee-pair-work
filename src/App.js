@@ -7,8 +7,15 @@ function App() {
   const [data, setData] = useState([]);
 
   function handleFileChange(e) {
-    readFile(e);
+    readFile(e)
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
+
   return (
     <div className="App">
       <h1>Employee pair work</h1>
@@ -17,6 +24,17 @@ function App() {
         text="Please upload CSV file"
         onHandleChange={handleFileChange}
       ></Button>
+      {data.map((d) => (
+        <p>
+          {d.employeeId}
+          {" | "}
+          {d.projectId}
+          {" | "}
+          {d.dateFrom}
+          {" | "}
+          {d.dateTo}
+        </p>
+      ))}
     </div>
   );
 }
