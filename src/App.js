@@ -4,6 +4,7 @@ import { useState } from "react";
 import { readFile } from "./utils/readFile";
 import { validationFileData } from "./utils/validationFileData";
 import ErrorTextComponent from "./components/ErrorTextComponent/ErrorTextComponent";
+import ResultItemList from "./components/ResultItemList/ResultItemList";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,12 +30,7 @@ function App() {
         text="Please upload CSV file"
         onHandleChange={handleFileChange}
       ></Button>
-      {data.map((d) => (
-        <p>{`${d.employeeId}
-        ${d.projectId}
-        ${d.dateFrom}
-        ${d.dateTo}`}</p>
-      ))}
+      <ResultItemList data={data} />
       {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
     </div>
   );
