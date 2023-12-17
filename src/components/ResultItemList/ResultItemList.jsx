@@ -5,7 +5,7 @@ import React from "react";
 
 function ResultItemList({ data }) {
   {
-    return data.map((e) => <ResultItem data={e} />);
+    return data.map((item) => <ResultItem data={item} />);
   }
 }
 
