@@ -1,5 +1,5 @@
 const procesDate = function (array) {
-  const newArray = array.map((item) => {
+  array.forEach((item) => {
     if (item.dateTo === "NULL") {
       return (item.dateTo = new Date());
     }
