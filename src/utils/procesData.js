@@ -43,6 +43,12 @@ const pairEmployeWithProjects = function (arrayData) {
   const commonProjectsArr = commonProjects(arrayData);
   commonProjectsArr.forEach((item) => {
     let tempObj = {};
+    const calcDays = calcCommonDays(
+      item.employeeOneDateFrom,
+      item.employeeOneDateTo,
+      item.employeeTwoDateFrom,
+      item.employeeTwoDateTo
+    );
     const pairEmpIndex = pairEmployeWithProjects.findIndex(
       (f) =>
         (f.employeeOne === item.employeeOne &&
@@ -52,6 +58,7 @@ const pairEmployeWithProjects = function (arrayData) {
     );
     if (pairEmpIndex === -1) {
       tempObj = {
+        totalWorkingDays: calcDays,
         employeeOne: item.employeeOne,
         employeeTwo: item.employeeTwo,
         commonProjects: [
@@ -61,15 +68,9 @@ const pairEmployeWithProjects = function (arrayData) {
             employeeOneDateTo: item.employeeOneDateTo,
             employeeTwoDateFrom: item.employeeTwoDateFrom,
             employeeTwoDateTo: item.employeeTwoDateTo,
-            commonWorkingDays: calcCommonDays(
-              item.employeeOneDateFrom,
-              item.employeeOneDateTo,
-              item.employeeTwoDateFrom,
-              item.employeeTwoDateTo
-            ),
+            commonWorkingDays: calcDays,
           },
         ],
-        totalWorkingDays: 0,
       };
       pairEmployeWithProjects.push(tempObj);
     } else {
@@ -79,12 +80,7 @@ const pairEmployeWithProjects = function (arrayData) {
         employeeOneDateTo: item.employeeOneDateTo,
         employeeTwoDateFrom: item.employeeTwoDateFrom,
         employeeTwoDateTo: item.employeeTwoDateTo,
-        commonWorkingDays: calcCommonDays(
-          item.employeeOneDateFrom,
-          item.employeeOneDateTo,
-          item.employeeTwoDateFrom,
-          item.employeeTwoDateTo
-        ),
+        commonWorkingDays: calcDays,
       });
       pairEmployeWithProjects[pairEmpIndex].totalWorkingDays =
         pairEmployeWithProjects[pairEmpIndex].commonProjects.reduce(
@@ -96,7 +92,7 @@ const pairEmployeWithProjects = function (arrayData) {
     }
   });
   const finalArray = pairEmployeWithProjects.filter(
-    (e) => e.commonProjects.length > 1
+    (e) => e.commonProjects.length > 0
   );
   console.log(finalArray);
 
