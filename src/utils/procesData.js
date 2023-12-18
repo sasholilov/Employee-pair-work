@@ -1,5 +1,5 @@
 const procesDate = function (array) {
-  array.forEach((item) => {
+  const procesDateArray = array.map((item) => {
     if (item.dateTo === "NULL") {
       return (item.dateTo = new Date());
     }
@@ -7,13 +7,15 @@ const procesDate = function (array) {
     item.dateFrom = new Date(item.dateFrom);
     return item;
   });
+  return procesDateArray;
 };
 
 const commonProjects = function (arrayData) {
-  const tempArray = [];
-  arrayData.forEach((item) => {
+  const commonProjectsArray = [];
+  const formatedArray = procesDate(arrayData);
+  formatedArray.forEach((item) => {
     let tempObj = {};
-    const projectIndex = tempArray.findIndex(
+    const projectIndex = commonProjectsArray.findIndex(
       (f) => f.projectId === item.projectId
     );
     if (projectIndex === -1) {
@@ -26,22 +28,22 @@ const commonProjects = function (arrayData) {
         employeeTwoDateFrom: "",
         employeeTwoDateTo: "",
       };
-      tempArray.push(tempObj);
+      commonProjectsArray.push(tempObj);
     } else {
-      tempArray[projectIndex].employeeTwo = item.employeeId;
-      tempArray[projectIndex].employeeTwoDateFrom = item.dateFrom;
-      tempArray[projectIndex].employeeTwoDateTo = item.dateTo;
+      commonProjectsArray[projectIndex].employeeTwo = item.employeeId;
+      commonProjectsArray[projectIndex].employeeTwoDateFrom = item.dateFrom;
+      commonProjectsArray[projectIndex].employeeTwoDateTo = item.dateTo;
     }
   });
-  return tempArray;
+  return commonProjectsArray;
 };
 
 const pairEmployeWithProjects = function (arrayData) {
-  const tempArray = [];
+  const pairEmployeWithProjects = [];
   const commonProjectsArr = commonProjects(arrayData);
   commonProjectsArr.forEach((item) => {
     let tempObj = {};
-    const pairEmpIndex = tempArray.findIndex(
+    const pairEmpIndex = pairEmployeWithProjects.findIndex(
       (f) =>
         (f.employeeOne === item.employeeOne &&
           f.employeeTwo === item.employeeTwo) ||
@@ -68,9 +70,9 @@ const pairEmployeWithProjects = function (arrayData) {
           },
         ],
       };
-      tempArray.push(tempObj);
+      pairEmployeWithProjects.push(tempObj);
     } else {
-      tempArray[pairEmpIndex].commonProjects.push({
+      pairEmployeWithProjects[pairEmpIndex].commonProjects.push({
         id: item.projectId,
         employeeOneDateFrom: item.employeeOneDateFrom,
         employeeOneDateTo: item.employeeOneDateTo,
@@ -93,7 +95,9 @@ const pairEmployeWithProjects = function (arrayData) {
       )
     );
   });
-  const finalArray = tempArray.filter((e) => e.commonProjects.length > 1);
+  const finalArray = pairEmployeWithProjects.filter(
+    (e) => e.commonProjects.length > 1
+  );
   console.log(finalArray);
 
   return finalArray;
@@ -108,4 +112,4 @@ const calcCommonDays = function (startOne, endOne, startTwo, endTwo) {
   return Math.floor(commonDays / (24 * 60 * 60 * 1000)) + 1;
 };
 
-export { procesDate, commonProjects, pairEmployeWithProjects };
+export { pairEmployeWithProjects };
