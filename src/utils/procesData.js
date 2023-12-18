@@ -69,6 +69,7 @@ const pairEmployeWithProjects = function (arrayData) {
             ),
           },
         ],
+        totalWorkingDays: 0,
       };
       pairEmployeWithProjects.push(tempObj);
     } else {
@@ -85,15 +86,14 @@ const pairEmployeWithProjects = function (arrayData) {
           item.employeeTwoDateTo
         ),
       });
+      pairEmployeWithProjects[pairEmpIndex].totalWorkingDays =
+        pairEmployeWithProjects[pairEmpIndex].commonProjects.reduce(
+          (acc, item) => {
+            return (acc += item.commonWorkingDays);
+          },
+          0
+        );
     }
-    console.log(
-      calcCommonDays(
-        item.employeeOneDateFrom,
-        item.employeeOneDateTo,
-        item.employeeTwoDateFrom,
-        item.employeeTwoDateTo
-      )
-    );
   });
   const finalArray = pairEmployeWithProjects.filter(
     (e) => e.commonProjects.length > 1
