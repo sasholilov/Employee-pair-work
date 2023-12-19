@@ -1,6 +1,6 @@
 import ResultItem from "../ResultItem/ResultItem";
 import "./ResultItemList.css";
-import { pairEmployeWithProjects, procesDate } from "../../utils/procesData";
+import { pairEmployeWithProjects } from "../../utils/procesData";
 
 import React from "react";
 

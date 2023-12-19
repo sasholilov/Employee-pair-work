@@ -1,4 +1,4 @@
-import { convertDateData } from "./covertedDateData";
+import { convertDateData } from "./convertDateData";
 
 const formatArray = function (array) {
   return array.map((e) => {

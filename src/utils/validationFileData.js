@@ -3,13 +3,12 @@ const validationFileData = function (array) {
   let errorTxt = "";
 
   array.map((e, index) => {
-    let hasError = Object.values(e).some((e) => e === "");
-    if (hasError) {
-      errorTxt = `Ivalid data on row: ${index}`;
+    let hasMissingData = Object.values(e).some((e) => e === "");
+    if (hasMissingData) {
+      errorTxt = `Missing data on row: ${index}`;
       msgArray.push(errorTxt);
     }
   });
-  console.log(msgArray);
   return msgArray;
 };
 

@@ -15,7 +15,6 @@ const convertDateData = function (value) {
     const month = value.slice(2, 4);
     const year = value.slice(4, 8);
     const formatedDateString = `${year}-${month}-${day}`;
-    console.log(formatedDateString);
     return formatedDateString;
   }
 
