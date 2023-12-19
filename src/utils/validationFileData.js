@@ -1,3 +1,4 @@
+import { DATE_PRESENT, ERROR_MESSAGE } from "./constants";
 const validationFileData = function (array) {
   const msgArray = [];
   let errorTxt = "";
@@ -6,13 +7,13 @@ const validationFileData = function (array) {
     let hasMissingData = Object.values(e).some((e) => e === "");
     let dateFrom = new Date(e.dateFrom);
     let dateTo = new Date(e.dateTo);
-    let checkForNullDate = e.dateTo === "NULL";
+    let checkForNullDate = e.dateTo === DATE_PRESENT;
     if (hasMissingData) {
-      errorTxt = `Missing data on row: ${index + 1}`;
+      errorTxt = `${ERROR_MESSAGE.MISSING_DATA}${index + 1}`;
       msgArray.push(errorTxt);
     }
     if (!checkForNullDate && (isNaN(dateFrom) || isNaN(dateTo))) {
-      errorTxt = `Wrong date format on row: ${index + 1}`;
+      errorTxt = `${ERROR_MESSAGE.WRONG_DATE_FORMAT}${index + 1}`;
       msgArray.push(errorTxt);
     }
   });

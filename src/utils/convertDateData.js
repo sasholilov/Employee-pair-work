@@ -1,13 +1,14 @@
+import { DATE_PRESENT, SEPARATORS } from "./constants";
 const convertDateData = function (value) {
   let separator;
-  if (value === "NULL") {
-    return "NULL";
+  if (value === DATE_PRESENT) {
+    return DATE_PRESENT;
   }
 
-  if (value.includes("-")) {
-    separator = "-";
-  } else if (value.includes(".")) {
-    separator = ".";
+  if (value.includes(SEPARATORS.DASH)) {
+    separator = SEPARATORS.DASH;
+  } else if (value.includes(SEPARATORS.DOT)) {
+    separator = SEPARATORS.DOT;
   }
 
   if (!separator) {
@@ -24,18 +25,19 @@ const convertDateData = function (value) {
     .join("-")
     .trim();
 
-  const stringFirstItemLength = convertedString.split("-")[0].length;
+  const stringFirstItemLength = convertedString.split(SEPARATORS.DASH)[0]
+    .length;
 
   if (stringFirstItemLength > 2) {
-    const year = convertedString.split("-")[0].slice(0, 4);
-    const month = convertedString.split("-")[1];
-    const day = convertedString.split("-")[2];
+    const year = convertedString.split(SEPARATORS.DASH)[0].slice(0, 4);
+    const month = convertedString.split(SEPARATORS.DASH)[1];
+    const day = convertedString.split(SEPARATORS.DASH)[2];
     const formatedDateString = `${year}-${month}-${day}`;
     return formatedDateString;
   } else {
-    const year = convertedString.split("-")[2].slice(0, 4);
-    const month = convertedString.split("-")[1];
-    const day = convertedString.split("-")[0];
+    const year = convertedString.split(SEPARATORS.DASH)[2].slice(0, 4);
+    const month = convertedString.split(SEPARATORS.DASH)[1];
+    const day = convertedString.split(SEPARATORS.DASH)[0];
     const formatedDateString = `${year}-${month}-${day}`;
     return formatedDateString;
   }

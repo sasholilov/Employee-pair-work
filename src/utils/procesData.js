@@ -1,6 +1,8 @@
+import { DATE_PRESENT } from "./constants";
+
 const procesDate = function (array) {
   const procesDateArray = array.map((item) => {
-    if (item.dateTo === "NULL") {
+    if (item.dateTo === DATE_PRESENT) {
       return (item.dateTo = new Date());
     }
     item.dateTo = new Date(item.dateTo);
@@ -94,6 +96,7 @@ const pairEmployeWithProjects = function (arrayData) {
   const finalArray = pairEmployeWithProjects.filter(
     (e) => e.commonProjects.length > 0
   );
+  console.log(finalArray);
   return finalArray.sort((a, b) => b.totalWorkingDays - a.totalWorkingDays);
 };
 
@@ -103,7 +106,8 @@ const calcCommonDays = function (startOne, endOne, startTwo, endTwo) {
   }
 
   const commonDays = Math.min(endOne, endTwo) - Math.max(startOne, startTwo);
-  return Math.floor(commonDays / (24 * 60 * 60 * 1000)) + 1;
+  const resultCommonDays = Math.floor(commonDays / (24 * 60 * 60 * 1000)) + 1;
+  return resultCommonDays;
 };
 
 export { pairEmployeWithProjects };
