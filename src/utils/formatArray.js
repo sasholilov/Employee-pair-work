@@ -10,10 +10,12 @@ const convertDateData = function (value) {
       })
       .join("-")
       .trim();
-    const year = convertedString.split("-")[2];
+
+    const year = convertedString.split("-")[0];
     const month = convertedString.split("-")[1];
-    const day = convertedString.split("-")[0];
-    const formatedDateString = `${day}-${month}-${year}`;
+    const day = convertedString.split("-")[2];
+    const formatedDateString = `${month}-${day}-${year}`;
+
     console.log("convertedString", formatedDateString);
     console.log("formatedDateString", formatedDateString);
     console.log("tempArr", tempArr);
