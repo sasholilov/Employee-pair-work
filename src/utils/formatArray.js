@@ -1,26 +1,34 @@
 const convertDateData = function (value) {
-  if (value !== "NULL") {
-    const tempArr = value.split(/[.\-]/);
-    const convertedString = tempArr
-      .map((b, index) => {
-        if (index === 2) {
-          return b.slice(0, 4);
-        }
-        return b;
-      })
-      .join("-")
-      .trim();
+  if (value === "NULL") {
+    return "NULL";
+  }
 
+  let separator;
+  if (value.includes("-")) {
+    separator = "-";
+  } else if (value.includes(".")) {
+    separator = ".";
+  }
+
+  const tempArr = value.split(separator);
+  const convertedString = tempArr
+    .map((b) => b)
+    .join("-")
+    .trim();
+
+  if (convertedString.split("-")[0].length > 2) {
     const year = convertedString.split("-")[0];
     const month = convertedString.split("-")[1];
     const day = convertedString.split("-")[2];
-    const formatedDateString = `${month}-${day}-${year}`;
-
-    console.log("convertedString", formatedDateString);
-    console.log("formatedDateString", formatedDateString);
-    console.log("tempArr", tempArr);
-    return new Date(formatedDateString);
-  } else return "NULL";
+    const formatedDateString = `${year}-${month}-${day}`;
+    return formatedDateString;
+  } else {
+    const year = convertedString.split("-")[2].slice(0, 4);
+    const month = convertedString.split("-")[1];
+    const day = convertedString.split("-")[0];
+    const formatedDateString = `${year}-${month}-${day}`;
+    return formatedDateString;
+  }
 };
 
 const formatArray = function (array) {
