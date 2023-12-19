@@ -95,7 +95,6 @@ const pairEmployeWithProjects = function (arrayData) {
     (e) => e.commonProjects.length > 0
   );
   console.log(finalArray);
-
   return finalArray;
 };
 
