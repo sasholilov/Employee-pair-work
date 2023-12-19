@@ -7,8 +7,8 @@ function ResultItem({ data }) {
         {`Total working days: ${data.totalWorkingDays}, Employee One ID: ${data.employeeOne},
   Employee Two ID: ${data.employeeTwo}`}
       </p>
-      {data.commonProjects.map((e) => (
-        <p>{`Project ID: ${e.id} - ${e.commonWorkingDays} days`}</p>
+      {data.commonProjects.map((e, index) => (
+        <p key={index}>{`Project ID: ${e.id} - ${e.commonWorkingDays} days`}</p>
       ))}
     </div>
   );

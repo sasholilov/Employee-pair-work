@@ -14,6 +14,7 @@ function App() {
     readFile(e)
       .then((data) => {
         setData(data);
+        console.log(data);
         const errData = validationFileData(data);
         setErrorMsg(errData);
       })

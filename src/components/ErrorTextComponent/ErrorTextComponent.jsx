@@ -7,8 +7,8 @@ function ErrorTextComponent({ errorArray }) {
     <div>
       <h2>Total errors: {errorArray.length}</h2>
       <ul>
-        {errorArray.map((msg) => (
-          <li>{msg}</li>
+        {errorArray.map((msg, index) => (
+          <li key={index}>{msg}</li>
         ))}
       </ul>
     </div>
