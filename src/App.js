@@ -14,7 +14,6 @@ function App() {
     readFile(e)
       .then((data) => {
         setData(data);
-        console.log(data);
         const errData = validationFileData(data);
         setErrorMsg(errData);
       })
@@ -31,7 +30,7 @@ function App() {
         text="Please upload CSV file"
         onHandleChange={handleFileChange}
       ></Button>
-      <ResultItemList data={data} />
+      {errorMsg.length === 0 && <ResultItemList data={data} />}
       {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
     </div>
   );
