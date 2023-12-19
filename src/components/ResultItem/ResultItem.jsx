@@ -2,15 +2,15 @@ import "./ResultItem.css";
 
 function ResultItem({ data }) {
   return (
-    <p>{`
-  Employee One: ${data.employeeOne}
-  Employee Two: ${data.employeeTwo}
-  Project id: ${data.projectId}
-  Date from Emp One: ${data.employeeOneDateFrom}
-  Date to Emp One: ${data.employeeOneDateTo}
-  Date from Emp Two: ${data.employeeTwoDateFrom}
-  Date to Emp Two: ${data.employeeTwoDateTo}
-  `}</p>
+    <div>
+      <p>
+        {`Total working days: ${data.totalWorkingDays}, Employee One ID: ${data.employeeOne},
+  Employee Two ID: ${data.employeeTwo}`}
+      </p>
+      {data.commonProjects.map((e) => (
+        <p>{`Project ID: ${e.id} - ${e.commonWorkingDays} days`}</p>
+      ))}
+    </div>
   );
 }
 
