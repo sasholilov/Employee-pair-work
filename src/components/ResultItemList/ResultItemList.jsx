@@ -6,11 +6,17 @@ import React from "react";
 
 function ResultItemList({ data }) {
   const finalData = pairEmployeWithProjects(data);
-  {
-    return finalData.map((item, index) => (
-      <ResultItem key={index} data={item} />
-    ));
-  }
+
+  return (
+    <div className="container">
+      <div className="result-items">
+        {finalData.length > 0 && <h2>Result</h2>}
+        {finalData.map((item, index) => (
+          <ResultItem key={index} data={item} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default ResultItemList;

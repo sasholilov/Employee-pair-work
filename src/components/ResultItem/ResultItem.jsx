@@ -2,7 +2,7 @@ import "./ResultItem.css";
 
 function ResultItem({ data }) {
   return (
-    <div>
+    <div className="result-item">
       <p>
         {`Total working days: ${data.totalWorkingDays}, Employee One ID: ${data.employeeOne},
   Employee Two ID: ${data.employeeTwo}`}

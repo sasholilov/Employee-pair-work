@@ -1,0 +1,14 @@
+.result-items {
+  padding-top: 25px;
+  font-family: "Alegreya Sans";
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result-items h2 {
+  font-size: 40px;
+  color: #232c3b;
+  letter-spacing: 1px;
+  text-align: center;
+}
