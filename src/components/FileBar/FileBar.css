@@ -34,7 +34,18 @@
   padding-right: 10px;
 }
 
-.file-bar-links span:first-child::after {
+.file-bar-links a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-bar-links a:hover {
+  color: #ff6c3a;
+}
+
+.instructions::after {
   content: "";
   width: 1px;
   height: 11px;

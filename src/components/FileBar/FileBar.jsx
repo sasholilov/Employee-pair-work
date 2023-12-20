@@ -11,8 +11,12 @@ function FileBar({ handleFileChange }) {
           <h2>Upload your CSV file</h2>
           <Button type="file" onHandleChange={handleFileChange}></Button>
           <div className="file-bar-links">
-            <span>Instructions</span>
-            <span>Download example CSV file</span>
+            <a href="#">
+              <span className="instructions">Instructions</span>
+            </a>
+            <a href="#">
+              <span>Download example CSV file</span>
+            </a>
           </div>
         </div>
       </div>
