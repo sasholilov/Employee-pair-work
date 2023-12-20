@@ -1,0 +1,45 @@
+.file-bar {
+  margin-top: 1px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  font-family: "Alegreya Sans";
+  background-image: url("./images/filebar-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: center;
+}
+
+.file-bar h2 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+
+.file-bar-content {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.file-bar-links {
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.file-bar-links span {
+  padding-right: 10px;
+}
+
+.file-bar-links span:first-child::after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  text-align: center;
+  background-color: #fff;
+  display: inline-block;
+  margin-left: 12px;
+}

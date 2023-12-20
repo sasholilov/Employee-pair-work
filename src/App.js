@@ -1,11 +1,11 @@
 import "./App.css";
-import Button from "./components/Buttons/Button";
 import { useState } from "react";
 import { readFile } from "./utils/readFile";
 import { validationFileData } from "./utils/validationFileData";
 import Header from "./components/Header/Header";
 import ErrorTextComponent from "./components/ErrorTextComponent/ErrorTextComponent";
 import ResultItemList from "./components/ResultItemList/ResultItemList";
+import FileBar from "./components/FileBar/FileBar";
 
 function App() {
   const [data, setData] = useState([]);
@@ -25,12 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header onHandleChange={handleFileChange} />
-      <Button
-        type="file"
-        text="Please upload CSV file"
-        onHandleChange={handleFileChange}
-      ></Button>
+      <Header />
+      <FileBar handleFileChange={handleFileChange} />
       {errorMsg.length === 0 && <ResultItemList data={data} />}
       {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
     </div>

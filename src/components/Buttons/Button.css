@@ -1,0 +1,16 @@
+.btn-file {
+  font-family: "Alegreya Sans";
+  color: #fff;
+}
+
+.btn-file input[type="file"]::file-selector-button {
+  background: #ff6c3a;
+  border: none;
+  color: #fff;
+  font-family: "Alegreya Sans";
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 18px 5px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
