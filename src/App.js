@@ -26,6 +26,11 @@ function App() {
   return (
     <div className="App">
       <Header onHandleChange={handleFileChange} />
+      <Button
+        type="file"
+        text="Please upload CSV file"
+        onHandleChange={handleFileChange}
+      ></Button>
       {errorMsg.length === 0 && <ResultItemList data={data} />}
       {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
     </div>

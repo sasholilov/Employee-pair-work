@@ -1,16 +1,20 @@
 import "./Header.css";
 import Button from "../Buttons/Button";
+import pairEmployee from "./images/pair-employees.png";
 
-function Header({ onHandleChange }) {
+function Header() {
   return (
     <header>
       <div className="container">
-        <h1>Employee pair work</h1>
-        <Button
-          type="file"
-          text="Please upload CSV file"
-          onHandleChange={onHandleChange}
-        ></Button>
+        <div className="header-left">
+          <h1>Longest teamwork of pairs employees</h1>
+          <h2>
+            Show pairs of employees and the projects they worked on in days
+          </h2>
+        </div>
+        <div className="header-right">
+          <img src={pairEmployee} />
+        </div>
       </div>
     </header>
   );
