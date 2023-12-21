@@ -1,5 +1,7 @@
 .result-items {
-  padding-top: 25px;
+  font-size: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   font-family: "Alegreya Sans";
   display: flex;
   flex-direction: column;
