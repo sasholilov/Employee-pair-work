@@ -4,6 +4,7 @@ import "./ResultItemList.css";
 import { pairEmployeWithProjects } from "../../utils/procesData";
 
 import React from "react";
+import SearchBar from "../SearchBar/SearchBar";
 
 function ResultItemList({ data }) {
   const [searchArr, setSearchArr] = useState([]);
@@ -25,9 +26,13 @@ function ResultItemList({ data }) {
 
   return (
     <div className="container">
-      <input onChange={searchHandle} type="text"></input>
       <div className="result-items">
-        {searchArr.length > 0 && <h2>Result</h2>}
+        {searchArr.length > 0 && (
+          <div className="result-items-header">
+            <SearchBar searchHandle={searchHandle} />
+            <h2>Result</h2>
+          </div>
+        )}
         {searchArr.map((item, index) => (
           <ResultItem key={index} data={item} />
         ))}
