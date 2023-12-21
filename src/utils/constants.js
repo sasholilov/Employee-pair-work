@@ -2,6 +2,7 @@ const DATE_PRESENT = "NULL";
 const SEPARATORS = {
   DASH: "-",
   DOT: ".",
+  SLASH: "/",
   SPLITCSV: ";",
 };
 const SPLIT_NEW_LINE = /(\r\n|\r|\n)/g;

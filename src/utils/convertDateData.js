@@ -9,6 +9,8 @@ const convertDateData = function (value) {
     separator = SEPARATORS.DASH;
   } else if (value.includes(SEPARATORS.DOT)) {
     separator = SEPARATORS.DOT;
+  } else if (value.includes(SEPARATORS.SLASH)) {
+    separator = SEPARATORS.SLASH;
   }
 
   if (!separator) {
@@ -19,11 +21,7 @@ const convertDateData = function (value) {
     return formatedDateString;
   }
 
-  const tempArr = value.split(separator);
-  const convertedString = tempArr
-    .map((b) => b)
-    .join("-")
-    .trim();
+  const convertedString = value.split(separator).join("-").trim();
 
   const stringFirstItemLength = convertedString.split(SEPARATORS.DASH)[0]
     .length;
