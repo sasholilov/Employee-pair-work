@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { readFile } from "./utils/readFile";
 import { validationFileData } from "./utils/validationFileData";
 import Header from "./components/Header/Header";
