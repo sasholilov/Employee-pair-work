@@ -1,5 +1,6 @@
 import "./ResultItem.css";
 import eployeeIcon from "./images/icon-employee.png";
+import projectIcon from "./images/icon-project.png";
 
 function ResultItem({ data }) {
   const { totalWorkingDays, employeeOne, employeeTwo, commonProjects } = data;
@@ -19,11 +20,18 @@ function ResultItem({ data }) {
         </div>
       </div>
       <div className="section-projects">
-        {commonProjects.map((e, index) => (
-          <span
-            key={index}
-          >{`Project ID: ${e.id}: ${e.commonWorkingDays} days`}</span>
-        ))}
+        <p className="project-title">Common projects</p>
+        <div className="projects-container">
+          {commonProjects.map((e, index) => (
+            <div className="projects-wrapper">
+              <img src={projectIcon} />
+              <div className="prj-info">
+                <p key={index}>ID: {e.id}</p>
+                <p>Days: {e.commonWorkingDays}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="section-totaldays">
         <p>Total days</p>

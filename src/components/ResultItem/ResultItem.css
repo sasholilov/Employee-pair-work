@@ -1,7 +1,7 @@
 .result-item:nth-child(even) {
   background-color: #232c3b;
   color: #fff;
-  padding: 20px;
+  padding: 35px 40px 35px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   border-radius: 8px;
 }
@@ -9,14 +9,15 @@
 .result-item:nth-child(odd) {
   background-color: #ff6c3a;
   color: #fff;
-  padding: 20px;
+  padding: 35px 40px 35px 40px;
   border-radius: 8px;
 }
 
 .result-item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  align-items: baseline;
 }
 
 .section-employee {
@@ -33,6 +34,7 @@
   font-size: 18px;
   letter-spacing: 0.3px;
   padding-bottom: 8px;
+  text-align: left;
 }
 
 .icon-wrapper {
@@ -46,7 +48,7 @@
   flex-direction: column;
   align-items: center;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding-right: 15px;
+  padding-right: 14px;
 }
 
 .icon-wrapper-two {
@@ -55,15 +57,65 @@
   align-items: center;
 }
 
-.section-totaldays p {
+.section-projects {
   text-align: center;
-  color: #b1b1b1;
+  justify-self: center;
+}
+
+.section-projects img {
+  max-width: 70px;
+  text-align: center;
+}
+
+.project-title {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  padding-bottom: 8px;
+}
+
+.prj-info {
+  font-size: 19px;
+  text-align: left;
+}
+
+.projects-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+}
+
+.projects-wrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-totaldays {
+  text-align: right;
+}
+
+.section-totaldays p {
+  color: #cbcbcb;
   text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.3px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  text-align: right;
+  font-weight: bold;
 }
 
 .section-totaldays span {
   color: #fff;
   font-size: 72px;
   font-weight: bold;
-  text-align: center;
+  text-align: right;
 }
