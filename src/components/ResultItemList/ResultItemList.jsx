@@ -27,7 +27,7 @@ function ResultItemList({ data }) {
   return (
     <div className="container">
       <div className="result-items">
-        {searchArr.length > 0 && (
+        {data.length > 0 && (
           <div className="result-items-header">
             <SearchBar searchHandle={searchHandle} />
             <h2>Result</h2>
