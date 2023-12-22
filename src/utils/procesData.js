@@ -96,7 +96,7 @@ const pairEmployeWithProjects = function (arrayData) {
   const finalArray = pairEmployeWithProjects.filter(
     (e) => e.commonProjects.length > 0
   );
-  console.log(finalArray);
+
   return finalArray.sort((a, b) => b.totalWorkingDays - a.totalWorkingDays);
 };
 
