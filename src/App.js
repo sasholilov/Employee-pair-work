@@ -26,7 +26,9 @@ function App() {
   useEffect(() => {
     const resultItemListEl = document.getElementById("resultItemList");
     if (resultItemListEl) {
-      resultItemListEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.requestAnimationFrame(() => {
+        resultItemListEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     }
   }, [data]);
 
