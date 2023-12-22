@@ -5,6 +5,7 @@ import { pairEmployeWithProjects } from "../../utils/procesData";
 import {
   searchByEmployeeId,
   searchByProjectId,
+  searchByDaysMin,
 } from "../../utils/searchingTypes";
 
 import React from "react";
@@ -14,10 +15,12 @@ function ResultItemList({ data }) {
   const [searchArr, setSearchArr] = useState([]);
   const [searchValueEmp, setSearchValueEmp] = useState("");
   const [searchValuePrj, setSearchValuePrj] = useState("");
+  const [searchValueDays, setSearchValueDays] = useState("");
 
   const finalData = pairEmployeWithProjects(data);
 
   useEffect(() => {
+    console.log(finalData);
     setSearchArr(finalData);
   }, [data]);
 
@@ -31,6 +34,11 @@ function ResultItemList({ data }) {
     setSearchValuePrj(value);
   }
 
+  function searchHandleLess(e) {
+    const value = e.target.value;
+    setSearchValueDays(value);
+  }
+
   useEffect(() => {
     const tempArr = searchByEmployeeId(finalData, searchValueEmp);
     setSearchArr(tempArr);
@@ -41,6 +49,11 @@ function ResultItemList({ data }) {
     setSearchArr(tempArr);
   }, [searchValuePrj]);
 
+  useEffect(() => {
+    const tempArr = searchByDaysMin(finalData, searchValueDays);
+    setSearchArr(tempArr);
+  }, [searchValueDays]);
+
   return (
     <div className="container">
       <div className="result-items">
@@ -48,6 +61,7 @@ function ResultItemList({ data }) {
           <div className="result-items-header">
             <SearchBar searchHandle={searchHandleEmp} />
             <SearchBar searchHandle={searchHandlePrj} />
+            <SearchBar searchHandle={searchHandleLess} />
           </div>
         )}
         {searchArr.map((item, index) => (

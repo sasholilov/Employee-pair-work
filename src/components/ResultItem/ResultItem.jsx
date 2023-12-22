@@ -23,10 +23,10 @@ function ResultItem({ data }) {
         <p className="project-title">Common projects</p>
         <div className="projects-container">
           {commonProjects.map((e, index) => (
-            <div className="projects-wrapper">
+            <div key={index} className="projects-wrapper">
               <img src={projectIcon} />
               <div className="prj-info">
-                <p key={index}>ID: {e.id}</p>
+                <p>ID: {e.id}</p>
                 <p>Days: {e.commonWorkingDays}</p>
               </div>
             </div>

@@ -14,4 +14,11 @@ const searchByProjectId = function (data, searchingValue) {
   return tempArr;
 };
 
-export { searchByEmployeeId, searchByProjectId };
+const searchByDaysMin = function (data, searchingValue) {
+  const tempArr = data.filter(
+    (element) => Number(element.totalWorkingDays) > Number(searchingValue)
+  );
+  return tempArr;
+};
+
+export { searchByEmployeeId, searchByProjectId, searchByDaysMin };
