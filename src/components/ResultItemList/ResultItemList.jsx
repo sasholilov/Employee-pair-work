@@ -27,16 +27,22 @@ function ResultItemList({ data }) {
   function searchHandleEmp(e) {
     const value = e.target.value;
     setSearchValueEmp(value);
+    setSearchValueDays("");
+    setSearchValuePrj("");
   }
 
   function searchHandlePrj(e) {
     const value = e.target.value;
     setSearchValuePrj(value);
+    setSearchValueEmp("");
+    setSearchValueDays("");
   }
 
-  function searchHandleLess(e) {
+  function searchHandleDays(e) {
     const value = e.target.value;
     setSearchValueDays(value);
+    setSearchValuePrj("");
+    setSearchValueEmp("");
   }
 
   useEffect(() => {
@@ -62,14 +68,17 @@ function ResultItemList({ data }) {
             <SearchBar
               placeholderTxt="Search by employee ID"
               searchHandle={searchHandleEmp}
+              value={searchValueEmp}
             />
             <SearchBar
               placeholderTxt="Search by project ID"
               searchHandle={searchHandlePrj}
+              value={searchValuePrj}
             />
             <SearchBar
               placeholderTxt="Minimun total working days"
-              searchHandle={searchHandleLess}
+              searchHandle={searchHandleDays}
+              value={searchValueDays}
             />
           </div>
         )}
