@@ -55,7 +55,7 @@ function ResultItemList({ data }) {
   }, [searchValueDays]);
 
   return (
-    <div className="container">
+    <div className="container" id="resultItemList">
       <div className="result-items">
         {data.length > 0 && (
           <div className="input-wrapper">
@@ -76,7 +76,11 @@ function ResultItemList({ data }) {
         {searchArr.map((item, index) => (
           <ResultItem key={index} data={item} />
         ))}
-        {!searchArr.length && <h2>No results to show</h2>}
+        {!data.length ? (
+          <h2>No data file loaded</h2>
+        ) : (
+          !searchArr.length && <h2 className="no-result">No results to show</h2>
+        )}
       </div>
     </div>
   );

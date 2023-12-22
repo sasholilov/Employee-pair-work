@@ -23,6 +23,13 @@ function App() {
       });
   }
 
+  useEffect(() => {
+    const resultItemListEl = document.getElementById("resultItemList");
+    if (resultItemListEl) {
+      resultItemListEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [data]);
+
   return (
     <div className="App">
       <Header />
