@@ -1,0 +1,18 @@
+.error-component {
+  background-color: #f6a7a3;
+  font-family: "Alegreya Sans";
+  color: #232c3b;
+  font-size: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.error-component h2 {
+  font-size: 40px;
+  color: #232c3b;
+  letter-spacing: 1px;
+}
+
+.error-component ul {
+  padding-left: 25px;
+}

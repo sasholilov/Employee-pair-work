@@ -22,22 +22,27 @@ function App() {
         console.log(error);
       });
   }
-
   useEffect(() => {
     const resultItemListEl = document.getElementById("resultItemList");
+    const errorComponentEl = document.getElementById("error-component");
     if (resultItemListEl) {
       window.requestAnimationFrame(() => {
         resultItemListEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    if (errorComponentEl) {
+      window.requestAnimationFrame(() => {
+        errorComponentEl.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
   }, [data]);
 
   return (
     <div className="App">
+      {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
       <Header />
       <FileBar handleFileChange={handleFileChange} />
       {errorMsg.length === 0 && <ResultItemList data={data} />}
-      {errorMsg.length > 0 && <ErrorTextComponent errorArray={errorMsg} />}
     </div>
   );
 }
