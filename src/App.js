@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { readFile } from "./utils/readFile";
 import { validationFileData } from "./utils/validationFileData";
+import { scrollAnimation } from "./utils/scrollAnimation";
 import Header from "./components/Header/Header";
 import ErrorTextComponent from "./components/ErrorTextComponent/ErrorTextComponent";
 import ResultItemList from "./components/ResultItemList/ResultItemList";
@@ -25,16 +26,7 @@ function App() {
   useEffect(() => {
     const resultItemListEl = document.getElementById("resultItemList");
     const errorComponentEl = document.getElementById("error-component");
-    if (resultItemListEl) {
-      window.requestAnimationFrame(() => {
-        resultItemListEl.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
-    if (errorComponentEl) {
-      window.requestAnimationFrame(() => {
-        errorComponentEl.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
+    scrollAnimation(resultItemListEl, errorComponentEl);
   }, [data]);
 
   return (
