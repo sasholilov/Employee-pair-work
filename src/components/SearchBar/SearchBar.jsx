@@ -1,11 +1,13 @@
 import "./SearchBar.css";
-import React from "react";
+import "./SearchBar.css";
 
-function SearchBar({ searchHandle }) {
+function SearchBar({ searchHandle, placeholderTxt }) {
   return (
-    <div>
-      <input onChange={searchHandle} type="text"></input>
-    </div>
+    <input
+      onChange={searchHandle}
+      placeholder={placeholderTxt}
+      type="text"
+    ></input>
   );
 }
 

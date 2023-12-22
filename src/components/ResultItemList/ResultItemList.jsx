@@ -58,10 +58,19 @@ function ResultItemList({ data }) {
     <div className="container">
       <div className="result-items">
         {data.length > 0 && (
-          <div className="result-items-header">
-            <SearchBar searchHandle={searchHandleEmp} />
-            <SearchBar searchHandle={searchHandlePrj} />
-            <SearchBar searchHandle={searchHandleLess} />
+          <div className="input-wrapper">
+            <SearchBar
+              placeholderTxt="Search by employee ID"
+              searchHandle={searchHandleEmp}
+            />
+            <SearchBar
+              placeholderTxt="Search by project ID"
+              searchHandle={searchHandlePrj}
+            />
+            <SearchBar
+              placeholderTxt="Minimun total working days"
+              searchHandle={searchHandleLess}
+            />
           </div>
         )}
         {searchArr.map((item, index) => (
