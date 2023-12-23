@@ -4,6 +4,7 @@
   padding: 35px 40px 35px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   border-radius: 8px;
+  align-items: center;
 }
 
 .result-item:nth-child(odd) {
@@ -12,6 +13,7 @@
   padding: 35px 40px 35px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   border-radius: 8px;
+  align-items: center;
 }
 
 .result-item:nth-child(odd) .projects-wrapper {
@@ -81,7 +83,7 @@
 }
 
 .prj-info {
-  font-size: 19px;
+  font-size: 17px;
   text-align: left;
 }
 
