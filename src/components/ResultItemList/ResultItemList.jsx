@@ -20,7 +20,6 @@ function ResultItemList({ data }) {
   const finalData = pairEmployeWithProjects(data);
 
   useEffect(() => {
-    console.log(finalData);
     setSearchArr(finalData);
   }, [data]);
 
