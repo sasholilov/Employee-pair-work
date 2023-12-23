@@ -126,3 +126,78 @@
   font-weight: bold;
   text-align: right;
 }
+
+@media (max-width: 1200px) {
+  .result-item {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .section-projects {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .result-item {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .section-employee img {
+    max-width: 60px;
+    opacity: 0.8;
+  }
+  .section-projects img {
+    max-width: 50px;
+  }
+  .section-projects {
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .result-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .section-employee img {
+    max-width: 45px;
+  }
+  .section-projects img {
+    max-width: 45px;
+  }
+  .section-employee p {
+    font-size: 16px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  .project-title {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+  .prj-info {
+    font-size: 17px;
+    text-align: left;
+  }
+
+  .projects-wrapper {
+    padding: 5px 10px 5px 10px;
+    margin-right: 5px;
+  }
+
+  .section-totaldays {
+    text-align: right;
+  }
+
+  .section-totaldays p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .section-totaldays span {
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

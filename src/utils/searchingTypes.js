@@ -18,6 +18,7 @@ const searchByDaysMin = function (data, searchingValue) {
   const tempArr = data.filter(
     (element) => Number(element.totalWorkingDays) > Number(searchingValue)
   );
+
   return tempArr;
 };
 

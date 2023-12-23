@@ -35,3 +35,37 @@ header .container {
 .header-right img {
   max-width: 400px;
 }
+
+@media (max-width: 1200px) {
+  header {
+    padding: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-left h1 {
+    font-size: 36px;
+    text-transform: capitalize;
+    line-height: 45px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .header-left h2 {
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 500;
+    padding-bottom: 28px;
+    text-align: center;
+  }
+
+  .header-right {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .header-right img {
+    max-width: 220px;
+  }
+}

@@ -53,3 +53,27 @@
   display: inline-block;
   margin-left: 12px;
 }
+
+@media (max-width: 1200px) {
+  .file-bar {
+    padding: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .file-bar h2 {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .file-bar-content {
+    text-align: center;
+  }
+  .file-bar-links {
+    margin: 0;
+    padding-top: 20px;
+    color: #fff;
+    font-weight: 400;
+  }
+}

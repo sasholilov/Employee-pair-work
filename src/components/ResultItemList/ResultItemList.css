@@ -19,6 +19,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: #232c3b;
   padding: 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
@@ -27,4 +28,13 @@
 
 .no-result {
   padding-top: 30px;
+}
+
+@media (max-width: 870px) {
+  .input-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

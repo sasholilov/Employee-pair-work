@@ -1,5 +1,4 @@
 import "./Header.css";
-import Button from "../Buttons/Button";
 import pairEmployee from "./images/pair-employees.png";
 
 function Header() {
