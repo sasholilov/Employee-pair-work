@@ -9,7 +9,7 @@ Input data is accepted from a CSV file in the following format:
 
 ## Problem solving
 
-The concept is that when the file is uploaded, the goal is to extract data from it, bring it into an appropriate data structure containing the necessary information to solve the problem, and create various components suitable for the contents of the data structure. Finally, these components are displayed to the user, helping them become familiar with the type of file and the required structure needed for uploading to view the results.
+We will solve the task with JavaScript and React. The concept is that when the file is uploaded, the goal is to extract data from it, bring it into an appropriate data structure containing the necessary information to solve the problem, and create various components suitable for the contents of the data structure. Finally, these components are displayed to the user, helping them become familiar with the type of file and the required structure needed for uploading to view the results.
 
 ### Algorithm
 
@@ -22,6 +22,15 @@ The concept is that when the file is uploaded, the goal is to extract data from 
 - Create a new data structure, grouping values by project.
 - Create a new data structure based on the previous one, grouping employee value pairs.
 - Display the final results of the last data structure in the corresponding React component.
+
+## Tech
+
+Used technologies
+
+- JavaScript
+- React
+- HTML
+- CSS
 
 ## Installation
 
