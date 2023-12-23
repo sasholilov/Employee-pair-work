@@ -1,9 +1,15 @@
 import "./FileBar.css";
+import { useState } from "react";
 import Button from "../Buttons/Button";
-
 import React from "react";
+import Modal from "../Modal/Modal";
 
 function FileBar({ handleFileChange }) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleModalOpen = function () {
+    setModalOpen(true);
+  };
+
   return (
     <div className="file-bar">
       <div className="container">
@@ -11,12 +17,13 @@ function FileBar({ handleFileChange }) {
           <h2>Upload your CSV file</h2>
           <Button type="file" onHandleChange={handleFileChange}></Button>
           <div className="file-bar-links">
-            <a href="#">
-              <span className="instructions">Instructions</span>
-            </a>
+            <span className="instructions" onClick={handleModalOpen}>
+              Instructions
+            </span>
             <a href="#">
               <span>Download example CSV file</span>
             </a>
+            {modalOpen && <Modal modalOpen={setModalOpen} />}
           </div>
         </div>
       </div>

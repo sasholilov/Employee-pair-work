@@ -54,6 +54,15 @@
   margin-left: 12px;
 }
 
+.instructions {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.instructions:hover {
+  color: #ff6c3a;
+}
+
 @media (max-width: 1200px) {
   .file-bar {
     padding: 40px;
