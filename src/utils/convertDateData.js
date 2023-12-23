@@ -26,19 +26,17 @@ const convertDateData = function (value) {
   const stringFirstItemLength = convertedString.split(SEPARATORS.DASH)[0]
     .length;
 
-  if (stringFirstItemLength > 2) {
-    const year = convertedString.split(SEPARATORS.DASH)[0].slice(0, 4);
-    const month = convertedString.split(SEPARATORS.DASH)[1];
-    const day = convertedString.split(SEPARATORS.DASH)[2];
-    const formatedDateString = `${year}-${month}-${day}`;
-    return formatedDateString;
-  } else {
-    const year = convertedString.split(SEPARATORS.DASH)[2].slice(0, 4);
-    const month = convertedString.split(SEPARATORS.DASH)[1];
-    const day = convertedString.split(SEPARATORS.DASH)[0];
-    const formatedDateString = `${year}-${month}-${day}`;
-    return formatedDateString;
-  }
+  const year =
+    stringFirstItemLength > 2
+      ? convertedString.split(SEPARATORS.DASH)[0].slice(0, 4)
+      : convertedString.split(SEPARATORS.DASH)[2].slice(0, 4);
+  const month = convertedString.split(SEPARATORS.DASH)[1];
+  const day =
+    stringFirstItemLength > 2
+      ? convertedString.split(SEPARATORS.DASH)[2]
+      : convertedString.split(SEPARATORS.DASH)[0];
+  const formatedDateString = `${year}-${month}-${day}`;
+  return formatedDateString;
 };
 
 export { convertDateData };

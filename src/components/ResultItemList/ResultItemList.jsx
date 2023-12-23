@@ -24,26 +24,26 @@ function ResultItemList({ data }) {
     setSearchArr(finalData);
   }, [data]);
 
-  function searchHandleEmp(e) {
+  const searchHandleEmp = function (e) {
     const value = e.target.value;
     setSearchValueEmp(value);
     setSearchValueDays("");
     setSearchValuePrj("");
-  }
+  };
 
-  function searchHandlePrj(e) {
+  const searchHandlePrj = function (e) {
     const value = e.target.value;
     setSearchValuePrj(value);
     setSearchValueEmp("");
     setSearchValueDays("");
-  }
+  };
 
-  function searchHandleDays(e) {
+  const searchHandleDays = function (e) {
     const value = e.target.value;
     setSearchValueDays(value);
     setSearchValuePrj("");
     setSearchValueEmp("");
-  }
+  };
 
   useEffect(() => {
     const tempArr = searchByEmployeeId(finalData, searchValueEmp);
