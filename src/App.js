@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import ErrorTextComponent from "./components/ErrorTextComponent/ErrorTextComponent";
 import ResultItemList from "./components/ResultItemList/ResultItemList";
 import FileBar from "./components/FileBar/FileBar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [data, setData] = useState([]);
@@ -35,6 +36,7 @@ function App() {
       <Header />
       <FileBar handleFileChange={handleFileChange} />
       {errorMsg.length === 0 && <ResultItemList data={data} />}
+      <Footer />
     </div>
   );
 }

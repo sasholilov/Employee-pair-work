@@ -1,0 +1,21 @@
+footer {
+  background-color: #1d2530;
+  text-align: center;
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  padding: 15px 0;
+  letter-spacing: 0.8px;
+}
+
+footer p {
+  color: white;
+  font-family: "Alegreya Sans";
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Alegreya Sans";
+}
