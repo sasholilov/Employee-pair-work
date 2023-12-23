@@ -22,6 +22,7 @@ function App() {
       })
       .catch((error) => {
         console.log(error);
+        setErrorMsg([error]);
       });
   }
   useEffect(() => {
